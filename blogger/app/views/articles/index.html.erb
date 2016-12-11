@@ -1,0 +1,13 @@
+<h1>All Articles</h1>
+
+<ul id="articles">
+  <% @articles.each do |article| %>
+    <li>
+      <!-- When we added the link_to in the index and pointed it to the article_path for this article, the router created this URL: http://localhost:3000/articles/1 -->
+      <!-- article.title is the text you want the link to say -->
+      <%= link_to article.title, article_path(article) %>
+    </li>
+  <% end %>
+</ul>
+ <!-- class is just for CSS -->
+<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
